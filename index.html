@@ -57,27 +57,30 @@
 
         /* Auto-coding Terminal Effect */
         .terminal-overlay {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            width: 400px;
-            height: 200px;
-            background: rgba(0, 0, 0, 0.95);
-            border: 2px solid #00ff00;
-            border-radius: 8px;
-            padding: 10px;
-            font-size: 11px;
-            color: #00ff00;
-            overflow: hidden;
-            z-index: 1500;
-            box-shadow: 0 0 30px rgba(0, 255, 0, 0.4);
-        }
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 400px;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.95);
+    border: 2px solid #00ff00;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 11px;
+    color: #00ff00;
+    overflow: hidden;
+    z-index: 1500;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.4);
+    animation: terminalMove 20s linear infinite;
+}
 
-        .terminal-text {
-            white-space: pre-wrap;
-            line-height: 1.2;
-            animation: typewriter 0.1s steps(1, end);
-        }
+@keyframes terminalMove {
+    0% { top: 10px; right: 10px; }
+    25% { top: 10px; right: calc(50% - 200px); }
+    50% { top: calc(100vh - 220px); right: calc(50% - 200px); }
+    75% { top: calc(100vh - 220px); right: 10px; }
+    100% { top: 10px; right: 10px; }
+}
 
         @keyframes typewriter {
             from { opacity: 0; }
@@ -542,7 +545,7 @@
 
     <!-- Layout transition indicator -->
     <div class="layout-indicator" id="layout-indicator">
-        LAYOUT: GRID-ALPHA
+        Classified: Confidential
     </div>
 
     <!-- Auto-coding terminal overlay -->
@@ -552,12 +555,12 @@
     </div>
 
     <header class="header">
-        <h1>CHOW YI TONG MAIN CONTROL - ENHANCED DASHBOARD</h1>
+        <h1>CHOW YI TONG - MAIN CONTROL</h1>
         <div class="status-bar">
             <span>SYSTEM STATUS: <span class="live-data">ONLINE</span></span>
             <span class="system-time" id="current-time"></span>
             <span>NETWORK: <span class="live-data">SECURED</span></span>
-            <span>USER: <span style="color: #00ffff;">OPERATOR</span></span>
+            <span>RESTRICTED: <span style="color: #00ffff;">OPERATOR</span></span>
         </div>
     </header>
 
@@ -587,7 +590,7 @@
             <!-- Crypto Market Widget -->
             <div class="widget">
                 <div class="widget-header">
-                    <span class="widget-title">Today Market Data <span class="loading-spinner"></span></span>
+                    <span class="widget-title">CRYPTO Refresh Data <span class="loading-spinner"></span></span>
                     <div class="widget-status"></div>
                 </div>
                 <div class="crypto-widget" id="crypto-data">
@@ -712,23 +715,22 @@
     <script>
         // Terminal auto-coding simulation
         const terminalCommands = [
-            '> Initializing dashboard modules...',
-            '> Loading weather API... [OK]',
-            '> Connecting to market feeds... [OK]',
-            '> Starting health monitoring... [OK]',
-            '> Optimizing system performance...',
-            '> Network diagnostics complete... [OK]',
-            '> AI assistant online... [OK]',
-            '> Scanning news sources...',
-            '> Singapore Straits Times... [CONNECTED]',
-            '> CNA News Feed... [CONNECTED]',
-            '> Google News API... [CONNECTED]',
-            '> Layout engine initialized... [OK]',
-            '> Dashboard fully operational',
-            '> Entering autonomous mode...',
-            '> System ready for user interaction'
-        ];
-
+    '> Booting CHOW YI TONG neural interface...',
+    '> Establishing secure quantum connection... [OK]',
+    '> Syncing biometric sensors... [OK]',
+    '> Loading personal AI assistant core... [OK]',
+    '> Calibrating productivity algorithms...',
+    '> Health monitoring systems active... [OK]',
+    '> Financial data streams connected... [OK]',
+    '> Weather satellite link established...',
+    '> Singapore news feeds synchronized... [OK]',
+    '> Task management protocol loaded... [OK]',
+    '> Network security protocols enabled... [OK]',
+    '> Mission control interface ready... [OK]',
+    '> All systems nominal and operational',
+    '> Entering enhanced productivity mode...',
+    '> Welcome back, Operator CYT'
+];
         let terminalIndex = 0;
         let currentCommand = '';
         let charIndex = 0;
@@ -922,14 +924,14 @@
 
         function updateAIMessage() {
             const messages = [
-                '🤖 System optimization complete. Peak performance window detected.',
-                '🤖 Biometric analysis shows optimal cognitive capacity for next 2 hours.',
-                '🤖 Network traffic patterns indicate best productivity window approaching.',
-                '🤖 Environmental conditions favorable for deep work sessions.',
+                '🤖 CEA compliance: All records synced. No outstanding alerts.',
+                '🤖 HDB resale market trend steady. High-value units seeing faster movement.',
+                '🤖 Lead pipeline health strong — 28 new buyer enquiries in past 24h.',
+                '🤖 JTC commercial availability updated. Industrial leads refreshed',
                 '🤖 Energy levels optimal for complex problem-solving tasks.',
-                '🤖 Hydration reminder: Peak brain performance requires adequate fluids.',
-                '🤖 Movement sensors suggest brief activity break for circulation.',
-                '🤖 Calendar analysis complete. Strategic break timing recommended.'
+                '🤖 Team stress levels low. Peak time to initiate outbound calls.',
+                '🤖 Listing visibility high — 5x engagement boost after photo refresh.',
+                '🤖 Office-wide productivity score: +17% since last Monday.'
             ];
             
             const message = messages[Math.floor(Math.random() * messages.length)];
